@@ -1,0 +1,106 @@
+/*== Dark mode: body background and text ==*/
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bs-body-bg: #000000;
+    --bs-body-color: #ffffff;
+    --bs-nav-link-color: #ffffff !important;
+    --bs-navbar-brand-color: #ffffff !important;
+    --bs-card-bg: #1a1a1a;
+    --bs-border-color: #333333;
+  }
+
+  /* Navbar dark mode */
+  .navbar {
+    background-color: #000000 !important;
+    color: #ffffff !important;
+    border-bottom-color: #333333 !important;
+  }
+  .navbar-dark .navbar-nav .nav-link {
+    color: #ffffff !important;
+  }
+
+  /* Links & headings */
+  a:not(.nav-link):not(.navbar-brand) {
+    color: #88bbee !important;
+  }
+  h1, h2, h3, h4, h5, h6, .title, .quarto-title-block .title {
+    color: #ffffff !important;
+  }
+
+  /* Footer */
+  .footer, footer, .page-foot, .page-navigation-wrapper {
+    color: #ffffff !important;
+  }
+
+  body {
+    background-color: #000000 !important;
+    color: #ffffff !important;
+  }
+
+  /* === GLightbox v3 lightbox dark-mode fixes ===
+   * The caption bar desc must use black bg + white text in dark mode. */
+
+  /* Caption area (always, override any light defaults) */
+  .gslide-description {
+    background-color: #000000 !important;
+    color: #ffffff !important;
+  }
+  .gslide-title {
+    color: #ffffff !important;
+  }
+  .gslide-desc {
+    background-color: #000000 !important;
+    color: #ffffff !important;
+  }
+
+  /* Media area / slide container */
+  .gslide-media-wrapper,
+  .slide-glide,
+  div.gslide,
+  .glightbox-clean {
+    background-color: #000000 !important;
+    color: #ffffff !important;
+  }
+
+  /* Overlay behind lightbox */
+  .goverlay {
+    background: rgba(0, 0, 0, 0.85) !important;
+  }
+
+  /* GLightbox close button — black for visibility on light backgrounds */
+  .btn-close,
+  .glightbox-clean .btn-close {
+    filter: invert(0) grayscale(100%) brightness(0%);
+  }
+
+  /* Page layout dark fix */
+  .page-layout-article,
+  .page-layout-fullcontent,
+  .main-container {
+    background-color: #000000 !important;
+  }
+
+  /* Scrollbar dark mode */
+  ::-webkit-scrollbar-track {
+    background: #333333;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #555555;
+  }
+
+  /* Table styling for dark */
+  table, tbody, tr {
+    border-color: #333333 !important;
+  }
+  .table-striped > tbody > tr:nth-of-type(odd) > * {
+    background-color: rgba(255, 255, 255, 0.05) !important;
+  }
+
+  /* Code blocks dark */
+  pre code,
+  code[class*="language-"],
+  pre[class*="language-"] {
+    background-color: #1e1e1e !important;
+    color: #d4d4d4 !important;
+  }
+}
