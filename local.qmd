@@ -1,0 +1,29 @@
+---
+title: Local Information
+---
+
+Kayak recommends Davis on its 2026 list of college towns worth a weekend visit, citing its ["farmers' market and sustainability-first mindset. It's an easygoing, under-the-radar NorCal gem."](https://www.kayak.com/news/underrated-college-towns/#davis) You may therefore want to spend some of your free time seeing town. This page has advice on how to get around and what to expect from the weather.
+
+## Bike
+
+ Home to the United States' first-ever bike lane, Davis does its utmost to welcome bicyclists. If you wish to rent a bike while here, you may visit [the UC Davis Bike Barn,](https://bikebarn.ucdavis.edu/rentals) a short walk from the hotel and conference center. The city is relatively flat and easy to bike around.
+
+::: {layout-ncol=2}
+
+![The Bike Barn. Click to enlarge.](./images/bike_barn.png){.lightbox}
+
+![Historic bike lane. Click to enlarge.](./images/bike_lane.png){.lightbox}
+
+:::
+
+## Bus
+
+The local bus service, [Unitrans,](https://unitrans.ucdavis.edu) some of whose buses are repurposed London Routemasters, will take you around town. It may be particularly useful for traveling to Oak Avenue destinations.
+
+![Routemaster bus in service on Oak Avenue in Davis. Click to enlarge.](./images/routemaster.png){.lightbox}
+
+## Weather
+
+In April temperatures may range from the 50s into the 70s or 80s (Fahrenheit) over the course of a day. Humidity is likely to be low. It's been known to rain, though chances are slim. You'll be well served by bringing a light jacket you won't mind removing and carrying during the day.
+
+
