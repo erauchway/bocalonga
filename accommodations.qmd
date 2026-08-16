@@ -1,0 +1,39 @@
+---
+title: "Accommodations"
+format:
+  html:
+    theme: ./theme/custom.scss
+    css: 
+      - https://unpkg.com/maplibre-gl@5/dist/maplibre-gl.css
+---
+
+<div class="page-nav"><p><a href="confindex.html">← Home</a></p></div>
+
+
+The conference has a block of rooms at the [Hyatt Place](https://www.hyatt.com/hyatt-place/en-US/smfzu-hyatt-place-uc-davis/rooms) on the UC Davis campus, a comfortable hotel located conveniently near the conference center and, for walking, running, or simply perusal, the [UC Davis Arboretum.](https://arboretum.ucdavis.edu/sites/g/files/dgvnsk1546/files/inline-files/visitor_map_2025%20%281%29_0.pdf) The Arboretum is also a pleasant route to walk to and from downtown.
+
+![The redwood grove in the UC Davis Arboretum](./images/redwood.png){fig-alt="The redwood grove in the UC Davis Arboretum" .lightbox}
+
+<div id="map" style="width: 100%; height: 400px;"></div>
+
+<script src="https://unpkg.com/maplibre-gl@5/dist/maplibre-gl.js"></script>
+<script>
+const map = new maplibregl.Map({
+    style: 'https://tiles.openfreemap.org/styles/liberty',
+    center: [-121.74629413141759, 38.53559779549776],
+    zoom: 16,
+    container: 'map'
+});
+new maplibregl.Marker({ color: '#D4600B' })
+    .setLngLat([-121.74629413141759, 38.53559779549776])
+    .setPopup(new maplibregl.Popup({ offset: 24 }).setHTML(
+        '<b>Hyatt Place Sacramento / UC Davis</b><br>' + 
+        'Hutchison Dr &amp; Old Davis Rd<br>' +
+        '<a href="https://www.hyatt.com/hyatt-place/en-US/smfzu-hyatt-place-uc-davis/rooms">Book rooms</a>')
+    )
+    .addTo(map);
+</script>
+
+Should you wish to make alternative arrangements you might try the [Aggie Inn,](https://www.choicehotels.com/california/davis/ascend-hotels/cad04) the [Best Western Plus Palm Court Davis,](https://www.bestwestern.com/en_US/book/hotels-in-davis/best-western-plus-palm-court-hotel/propertyCode.05536.html) or the [Hilton Garden Inn Davis Downtown,](https://www.hilton.com/en/hotels/smfdagi-hilton-garden-inn-davis-downtown/) all in town and quite close to campus, and more or less along a route from the train station to the conference center.
+
+<div class="page-nav"><p><a href="confindex.html">← Home</a></p></div>
