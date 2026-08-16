@@ -1,0 +1,2 @@
+thanks.md
+With thanks to the Department of History at Stanford University, the Margaret Byrne Chair of American History at the University of California, Berkeley, and the Department of History, the College of Letters and Science, and the Office of the Provost at the University of California, Davis.

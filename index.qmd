@@ -1,0 +1,146 @@
+---
+title: ""
+mainfont: "Lato"
+sansfont: "Josefin Sans"
+fontcolor: white
+format:
+  closeread-html:
+    backgroundcolor: black
+    cr-style:
+      section-background-color: black
+      narrative-text-color-sidebar: "#ffffff"
+      narrative-background-color-overlay: NA
+      narrative-font-family: "Josefin Sans"
+      narrative-font-size: "2.5em"
+      narrative-text-align: "center"
+---
+
+```{=html}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Yellowtail&display=swap" rel="stylesheet">
+<style>
+.quarto-title {
+  font-family: "Yellowtail", cursive !important;
+}
+.quarto-title .title {
+  font-size: 3em;
+}
+.centered-title {
+  text-align: center;
+}
+#chevron-canvas {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+</style>
+```
+
+
+:::{.cr-section layout="overlay-center"}
+
+:::{focus-on="cr-blank" .centered-title}
+
+Coming soon: 
+
+BoCa LonGa 8
+<br><br>
+<canvas id="chevron-canvas" width="120" height="160" style="display:block; margin: 0 auto;"></canvas>
+:::
+
+:::{focus-on="cr-route-master" .centered-title}
+Davis, California
+:::
+
+:::{#cr-route-master}
+![](./images/routemaster.png)
+:::
+
+:::{focus-on="cr-blank" .centered-title}
+mark your calendar:
+:::
+
+:::{#cr-blank}
+:::
+
+:::{focus-on="cr-tower" .centered-title}
+April 9--10, 2027
+
+and watch this space
+:::
+
+
+:::{#cr-tower}
+![](./images/vines-tower.png)
+:::
+:::
+
+
+
+
+:::{text-align="left"}
+With thanks to the Department of History at Stanford University, the Margaret Byrne Chair of American History at the University of California, Berkeley, and the Department of History, the College of Letters and Science, and the Office of the Provost at the University of California, Davis.
+:::
+
+```{=html}
+<script>
+function draw() {
+  var canvas = document.getElementById("chevron-canvas");
+  if (!canvas) return;
+  var ctx = canvas.getContext("2d");
+  if (!ctx) return;
+
+  var offset = 0;
+  var direction = 1;
+  var globalAlpha = 0;      // for fade-in
+  var fadeDone = false;
+
+  function drawChevron(x, y, size, alpha) {
+    ctx.beginPath();
+    ctx.moveTo(x - size, y - size/4);   // size/4 instead of size/2 = shallower
+    ctx.lineTo(x, y + size/4);
+    ctx.lineTo(x + size, y - size/4);
+    ctx.strokeStyle = "rgba(255,255,255," + alpha + ")";
+    ctx.lineWidth = 3;
+    ctx.lineCap = "round";
+    ctx.lineJoin = "round";
+    ctx.stroke();
+  }
+
+  function animate() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    // Fade in
+    if (!fadeDone) {
+      globalAlpha = Math.min(1, globalAlpha + 0.02);
+      if (globalAlpha >= 1) fadeDone = true;
+    }
+    ctx.globalAlpha = globalAlpha;
+
+    offset += 0.3 * direction;
+    if (offset > 8) direction = -1;
+    if (offset < 0) direction = 1;
+
+    var cx = canvas.width / 2;
+
+    ctx.font = "11px sans-serif";
+    ctx.fillStyle = "rgba(255,255,255,0.8)";
+    ctx.textAlign = "center";
+    ctx.fillText("scroll down", cx, 25);
+
+    drawChevron(cx, 55 + offset, 18, 0.3);
+    drawChevron(cx, 85 + offset, 18, 0.6);
+    drawChevron(cx, 115 + offset, 18, 1.0);
+
+    requestAnimationFrame(animate);
+  }
+
+  animate();
+}
+
+[50,  100, 150].forEach(function(ms) {
+  setTimeout(draw, ms);
+});
+</script>
+```

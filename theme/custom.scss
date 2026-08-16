@@ -1,7 +1,80 @@
 /*-- scss:defaults --*/
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Yellowtail&display=swap');
+
 $font-family-sans-serif: "Josefin Sans", sans-serif;
+
 /*-- scss:rules --*/
-.cr-section{
-  text-align: center;
+
+h1, .title {
+  font-family: "Yellowtail", cursive;
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+    :root {
+      --quarto-body-bg: #000000;
+      --quarto-body-color: #ffffff;
+      --quarto-heading-color: #ffffff;
+      --quarto-link-color: #88bbee;
+      --quarto-code-bg: #1e1e1e;
+     }
+
+   body {
+     background-color: #000000;
+     color: #ffffff;
+     }
+
+     .navbar {
+     background-color: #000000;
+     color: #ffffff;
+     border-bottom-color: #333333;
+     }
+
+     .navbar-dark .navbar-nav .nav-link {
+      color: #ffffff;
+      }
+
+   a {
+     color: #88bbee;
+     }
+
+   h1, h2, h3, h4, h5, h6 {
+     color: #ffffff;
+     }
+
+     .footer {
+      color: #ffffff;
+      }
+
+     /* --- GLightbox v3 lightbox dark-mode fixes --- */
+
+     /* The :root block above sets --quarto-body-bg:#000 and --quarto-body-color:#fff.
+      * But to be safe against specificity races or missing cascade, we explicitly force
+      * the caption bar colors on every GLightbox descriptor selector used in _site pages: */
+
+    body.glightbox-mobile .gslide-description,
+    body.glightbox-mobile .gslide-title,
+    body:not(.glightbox-mobile) div.gslide div.gslide-description,
+    body:not(.glightbox-mobile) div.gslide-description .gslide-title,
+    body:not(.glightbox-mobile) div.gslide-description .gslide-desc {
+      background-color: #000000 !important;
+      color: #ffffff !important;
+     }
+
+     /* Lightbox media area / slide background */
+    body:not(.glightbox-mobile) div.gslide-media,
+    div.gslide-description {
+      background-color: #000000 !important;
+     }
+
+     /* Overlay opacity — slightly darker */
+     .goverlay {
+      background: rgba(0, 0, 0, 0.85) !important;
+     }
+
+     /* GLightbox close button — black for white-on-black visibility on light backgrounds */
+     .btn-close,
+     .glightbox-clean .btn-close {
+      filter: invert(0) grayscale(100%) brightness(0%);
+     }
 }

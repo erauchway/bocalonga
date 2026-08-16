@@ -1,0 +1,35 @@
+---
+title: "BoCa LonGa 2027"
+format:
+  html:
+    theme: ./theme/custom.scss
+    css: css/gridmenu.css
+---
+
+<!-- Main menu grid -->
+<div class="grid-menu">
+<a href="directions.html">
+<img src="images/davis_station.png" alt="Davis Station">
+<span class="label">Directions</span>
+</a>
+<a href="accommodations.html">
+<img src="images/hyatt.png" alt="UC Davis Hyatt">
+<span class="label">Accommodations</span>
+</a>
+<a href="local.html">
+<img src="images/routemaster.png" alt="A Routemaster bus in Davis">
+<span class="label">Local<br>Information</span>
+</a>
+<div class="empty"></div>
+</div>
+
+<!-- Credit / attribution text -->
+<div class="grid-credit">
+With thanks to the Department of History at Stanford University,
+the Margaret Byrne Chair of American History at the University of
+California, Berkeley, and the Department of History, the College
+of Letters and Science, and the Office of the Provost at the
+University of California, Davis.
+</div>
+
+<div class="page-nav"><p><a href="index.html">← Home</a></p></div>
