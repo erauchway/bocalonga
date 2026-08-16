@@ -1,2 +1,7 @@
 /.quarto/
 **/*.quarto_ipynb
+AGENTS.md
+text
+docs/text
+.DS_Store
+docs/.DS_Store
