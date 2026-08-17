@@ -58,3 +58,9 @@
 - added CNAME
 - changed home links to `index.html`
 - changed `confindex.html` to `index.html`
+## 2026-08-17 Progress (grid menu — mobile/touch accessibility)
+- Re-verified the whole site: `quarto render` exits 0 with no errors/warnings; confirmed the index grid renders four `<a>` cells as direct children of `.grid-menu` (the earlier "cells collapsed into one `<p>`" bug stays fixed), credit note intact, fonts compiled, dark-mode present.
+- Addressed the flagged to-do "make the grid menu accessible on mobile." Root problem: cell labels were `opacity:0` and revealed only via `:hover`, so touch devices (no hover) showed a dim 2×2 grid with no way to discover what each square links to.
+- Fixed in `css/gridmenu.css`: (1) extended the label- and image-reveal selectors to include `:focus`, `:focus-within`, and `:active`, so a keyboard/screen-reader user Tabs to a square and a label appears on tap; (2) added `@media (hover: none) { .grid-menu .label { opacity: 1; } }` so phones/tablets keep all four labels visible at all times.
+- Verified `quarto render` exits 0 and the new rules propagated to `docs/css/gridmenu.css`.
+- Left as an open, user-facing decision in `_todos.md`: the small-screen *layout* (fixed 2×2 with `aspect-ratio: 1/1` and `width: min(100%, 600px)`) still shows two columns of small squares on phones — whether to stack to one column or enlarge cells below ~600px. Not assumed; flagged for the user since it affects the "equally accessible on mobile" requirement and is a layout/aesthetic choice.
