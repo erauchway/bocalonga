@@ -1,0 +1,68 @@
+version: 2
+allow:
+- tool: web_fetch
+  args:
+    url: https://openweathermap.org/api/weather-map-2{,/**}
+- tool: web_fetch
+  args:
+    url: https://openweathermap.org/weathermap{,/**}
+- tool: shell_exec
+  args:
+    command_tokens:
+    - quarto
+    - render
+    - '*'
+- tool: shell_exec
+  args:
+    command_tokens:
+    - chmod
+    - '+x'
+    - '*'
+- tool: web_fetch
+  args:
+    url: https://docs.polytoken.dev/reference/configuration{,/**}
+- tool: shell_exec
+  args:
+    command_tokens:
+    - polytoken
+    - vfs
+    - '*'
+- tool: shell_exec
+  args:
+    command_tokens:
+    - sed
+    - '*'
+- tool: shell_exec
+  args:
+    command_tokens:
+    - sort
+    - '*'
+- tool: shell_exec
+  args:
+    command_tokens:
+    - uniq
+    - '*'
+- tool: shell_exec
+  args:
+    command_tokens:
+    - xxd
+    - '*'
+- tool: web_search
+- tool: web_fetch
+  args:
+    url: https://docs.polytoken.dev/harness-engineering/subagents{,/**}
+- tool: web_fetch
+  args:
+    url: https://ollama.com/search{,/**}
+- tool: web_fetch
+  args:
+    url: https://docs.polytoken.dev/harness-engineering/facets{,/**}
+filesystem:
+  allow:
+  - access:
+    - read
+    path: ~/.config/polytoken/config.yaml
+  - access:
+    - read
+    - write
+    path: ~/.config/polytoken/config.yaml

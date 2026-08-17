@@ -3,5 +3,6 @@
 AGENTS.md
 text
 docs/text
+.env.local
 .DS_Store
 docs/.DS_Store
