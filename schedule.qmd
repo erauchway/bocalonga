@@ -1,9 +1,12 @@
 ---
 title: Conference Schedule
+subtitle: April 9--10, 2027
 format:
   html:
     css: css/schedule.css
 ---
+
+<div class="page-nav"><p><a href="index.html">← Home</a></p></div>
 
 As is traditional for BoCa LonGa, we will have a mixture of panels including standard conference panels with  short, presented research papers, focused panels with pre-circulated written papers, and "meet the projects" sessions for new work.
 
@@ -44,3 +47,5 @@ We will post a detailed schedule when we have one. For now, please plan for the 
   </div>
 </div>
 ```
+<hr>
+<div class="page-nav"><p><a href="index.html">← Home</a></p></div>

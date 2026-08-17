@@ -2,7 +2,7 @@
 title: Local Information
 ---
 
-<div class="page-nav"><p><a href="confindex.html">← Home</a></p></div>
+<div class="page-nav"><p><a href="index.html">← Home</a></p></div>
 
 
 Kayak recommends Davis on its 2026 list of college towns worth a weekend visit, citing its ["farmers' market and sustainability-first mindset. It's an easygoing, under-the-radar NorCal gem."](https://www.kayak.com/news/underrated-college-towns/#davis) You may therefore want to spend some of your free time seeing town. This page has advice on how to get around and what to expect from the weather.
@@ -38,8 +38,8 @@ The local bus service, [Unitrans,](https://unitrans.ucdavis.edu) some of whose b
 
 ![Routemaster bus in service on Oak Avenue in Davis. Click to enlarge.](./images/routemaster.png){.lightbox}
 
+<hr>
 
-
-<div class="page-nav"><p><a href="confindex.html">← Home</a></p></div>
+<div class="page-nav"><p><a href="index.html">← Home</a></p></div>
 
 

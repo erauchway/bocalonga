@@ -7,11 +7,11 @@ format:
         - https://unpkg.com/maplibre-gl@5/dist/maplibre-gl.css
 ---
 
-<div class="page-nav"><p><a href="confindex.html">← Home</a></p></div>
+<div class="page-nav"><p><a href="index.html">← Home</a></p></div>
 
 
 This page has advice on how to get to UC Davis; for getting around
-once you're here, please see the page on local accommodations.
+once you're here, please see the page on [local information.](./local.html)
 
 ## By air
 
@@ -68,5 +68,5 @@ new maplibregl.Marker({ color: '#D4600B' })
       )
       .addTo(map);
 </script>
-
-<div class="page-nav"><p><a href="confindex.html">← Home</a></p></div>
+<hr>
+<div class="page-nav"><p><a href="index.html">← Home</a></p></div>
