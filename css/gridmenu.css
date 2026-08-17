@@ -38,8 +38,11 @@
     vertical-align: unset !important;
 }
 
-/* Brighten image on cell hover */
-.grid-menu a:hover img {
+/* Brighten image when the cell is hovered, focused, or pressed */
+.grid-menu a:hover img,
+.grid-menu a:focus img,
+.grid-menu a:focus-within img,
+.grid-menu a:active img {
     filter: brightness(100%);
 }
 
@@ -55,9 +58,24 @@
     pointer-events: none;
 }
 
-/* Show label on cell hover */
-.grid-menu a:hover .label {
+/* Show label on cell hover, keyboard focus, or press.
+* :focus / :focus-within make each square reveal its label when a keyboard or
+* screen-reader user Tabs to it; :active covers the instant of a tap. */
+.grid-menu a:hover .label,
+.grid-menu a:focus .label,
+.grid-menu a:focus-within .label,
+.grid-menu a:active .label {
     opacity: 1;
+}
+
+/* Touch devices (phones / tablets) report (hover: none) and have no hover
+* state, so a dimmed 2x2 grid with hover-only labels is unusable there: a
+* visitor sees four dim images and cannot tell what any square links to.
+* On such devices keep the labels visible at all times. */
+@media (hover: none) {
+      .grid-menu .label {
+        opacity: 1;
+      }
 }
 
 /* Empty placeholder cells */

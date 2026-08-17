@@ -1,11 +1,9 @@
+## Done
+
+[x] 2026-08-17 — Verify site renders cleanly and meets requirements: `quarto render` exits 0 with no errors/warnings; index grid renders 4 cells as direct children of `.grid-menu` (Davis Station→directions, Hyatt→accommodations, Routemaster→local, Vines Tower→schedule); credit note intact; Yellowtail + Josefin Sans fonts confirmed compiled into Bootstrap bundle; dark-mode present; all 8 referenced images exist; home links point to `index.html`.
+
 ## To Do
-[x] ensure `custom.scss` and `_quarto.yml` are correct
-[x] draft `confindex.qmd`, `directions.qmd`, and `accommodations.qmd`; place the image grid/menu in `confindex.qmd` as described
-[x] draw "thanks" text from `thanks.md` file
-[x] code `confindex.qmd` in clean Quarto (inline styles → external `css/gridmenu.css`)
-[x] add content to `directions.qmd` 
-[x] revise `index.qmd` so "BoCa LonGa 8" is centered above "scroll down" indicators
-[x] add content to `accommodations.qmd`
-[x] change lower left corner of the grid on `confindex.qmd` to read "Local Information", and linking to `local.qmd` using text from `text/local.md`  
-[x] create `schedule.qmd`, `papers.qmd`, and `locations.qmd`
-[x] Add calendar grid to `schedule.qmd`
+
+- [x] 2026-08-17 — Grid menu: made cells/labels discoverable on touch + keyboard (`@media (hover: none)` keeps labels visible on phones; `:focus`/`:focus-within`/`:active` reveal them on Tab or tap).
+  - It is currently a fixed 2×2 grid with `aspect-ratio: 1/1` and no `@media` query, so it just shrinks on narrow screens.
+  - **Key issue:** cell labels are `opacity:0` and revealed only via `:hover` — touch devices have no hover, so a phone visitor sees a dim 2×2 and cannot tell what any square links to. Needs a touch-friendly way to reveal labels (e.g. tap/click, always-visible on small screens, or a focus/active state) plus a sensible small-screen layout (stack to one column or enlarge cells). Affects the "equally accessible on mobile" requirement.

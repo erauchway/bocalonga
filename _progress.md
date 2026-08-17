@@ -54,3 +54,7 @@
 - Root causes: (1) `.conf-slots th` used `width: 8.5em`, slightly narrower than the longest time ranges ("11:00am–12:30pm"); (2) `white-space: nowrap` forced that text onto one line, so it overflowed its cell rightward; (3) with `table-layout: fixed` the event `<td>` starts at the time column's edge, so the two columns' text shared the same x-region → overwrite. The `@media (max-width: 600px)` block made mobile worst by *shrinking* the time column to `6.5em` when the day is already full-width.
 - Changes to `css/schedule.css`: time column `.conf-slots th` switched from `width: 8.5em` + `white-space: nowrap` to `width: 40%` + `white-space: normal` + `overflow-wrap: anywhere` (a long range now wraps inside its own cell instead of spilling into the event column); event `.conf-slots td` gained `padding-left: 0.75em` (a visible gutter so the two columns are visually distinct) and `overflow-wrap: anywhere` (long titles stay in their own column); removed the `@media (max-width: 600px)` `width: 6.5em` shrink entirely (each stacked day already gets full width, so 40% is generous). File was rewritten in full to clean up inconsistent whitespace.
 - Verified `quarto render` exits 0 with no errors; confirmed `docs/css/schedule.css` picked up `white-space: normal`, `overflow-wrap: anywhere`, `width: 40%` and that the old `6.5em` override is gone; `docs/schedule.html` still links `css/schedule.css`.
+## 2026-08-17
+- added CNAME
+- changed home links to `index.html`
+- changed `confindex.html` to `index.html`

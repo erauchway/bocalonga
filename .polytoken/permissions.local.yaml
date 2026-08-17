@@ -62,6 +62,11 @@ allow:
     command_tokens:
     - env
     - '*'
+- tool: shell_exec
+  args:
+    command_tokens:
+    - od
+    - '*'
 filesystem:
   allow:
   - access:
