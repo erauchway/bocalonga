@@ -48,24 +48,39 @@
     border-color: rgba(128, 128, 128, 0.35);
 }
 
-/* Time column heading / cell */
+/*
+ * Time column heading / cell.
+ *
+ * A percentage width (not a fixed em) keeps the two-column ratio sane at
+ * every viewport and lets the table auto-layout hand the remaining space to
+ * the event column. white-space: normal + overflow-wrap: anywhere let an
+ * unusually long time range wrap inside its own cell instead of overflowing
+ * rightward into the event column -- the cause of the "event overwrites time"
+ * collision on narrow windows.
+ */
 .conf-slots th {
     text-align: left;
     font-weight: normal;
     font-size: 0.8em;
     font-variant-numeric: tabular-nums;
     opacity: 0.85;
-    white-space: nowrap;
+    white-space: normal;
+    overflow-wrap: anywhere;
     vertical-align: top;
-    width: 8.5em;
+    width: 40%;
     padding: 0.55em 0.75em 0.55em 0;
     border-bottom: 1px solid rgba(128, 128, 128, 0.35);
 }
 
-/* Event cell */
+/*
+ * Event cell. Left padding gives a visible gutter so the event text never
+ * starts at the same x-position as the time text (two distinct columns);
+ * overflow-wrap keeps a long event title inside its own column.
+ */
 .conf-slots td {
     vertical-align: top;
-    padding: 0.55em 0;
+    padding: 0.55em 0 0.55em 0.75em;
+    overflow-wrap: anywhere;
     border-bottom: 1px solid rgba(128, 128, 128, 0.35);
 }
 
@@ -75,14 +90,16 @@
     border-bottom: none;
 }
 
-/* --- Responsive: stack the two days and relax the time gutter on phones --- */
+/*
+ * Responsive: stack the two days into one column. Each day then gets the
+ * full page width, so a 40% time column is already generous -- shrinking it
+ * further (the old 6.5em override) is what caused the mobile column collision,
+ * so no conf-slots width override is applied here.
+ */
 @media (max-width: 600px) {
     .conf-calendar {
         grid-template-columns: 1fr;
         gap: 1.5em;
         width: 100%;
-      }
-     .conf-slots th {
-        width: 6.5em;
-      }
+    }
 }
