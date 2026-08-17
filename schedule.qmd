@@ -1,0 +1,46 @@
+---
+title: Conference Schedule
+format:
+  html:
+    css: css/schedule.css
+---
+
+As is traditional for BoCa LonGa, we will have a mixture of panels including standard conference panels with  short, presented research papers, focused panels with pre-circulated written papers, and "meet the projects" sessions for new work.
+
+We will post a detailed schedule when we have one. For now, please plan for the conference to take the entire business day on Friday and Saturday, the 9th and 10th of April.
+
+```{=html}
+<!-- Conference calendar: two days as columns, time-as-rows within each day -->
+<div class="conf-calendar">
+  <div class="conf-day">
+    <h3>Friday, April 9</h3>
+    <table class="conf-slots">
+      <tr><th scope="row">8:30am</th><td>Breakfast and welcome</td></tr>
+      <tr><th scope="row">9:00am&ndash;10:30am</th><td>Double Workshop 1</td></tr>
+      <tr><th scope="row">10:30am&ndash;11:00am</th><td>Coffee</td></tr>
+      <tr><th scope="row">11:00am&ndash;12:30pm</th><td>Panel 1</td></tr>
+      <tr><th scope="row">12:30pm&ndash;1:30pm</th><td>Lunch</td></tr>
+      <tr><th scope="row">1:30pm&ndash;3:00pm</th><td>Panel 2</td></tr>
+      <tr><th scope="row">3:00pm&ndash;3:15pm</th><td>Break</td></tr>
+      <tr><th scope="row">3:15pm&ndash;4:15pm</th><td>Panel 3</td></tr>
+      <tr><th scope="row">4:15pm&ndash;4:30pm</th><td>Break</td></tr>
+      <tr><th scope="row">4:30pm&ndash;6:15pm</th><td>Meet the Projects 1</td></tr>
+      <tr><th scope="row">7:30pm</th><td>Dinner</td></tr>
+    </table>
+  </div>
+  <div class="conf-day">
+    <h3>Saturday, April 10</h3>
+    <table class="conf-slots">
+      <tr><th scope="row">8:30am&ndash;9:00am</th><td>Breakfast</td></tr>
+      <tr><th scope="row">9:00am&ndash;10:30am</th><td>Double Workshop 2</td></tr>
+      <tr><th scope="row">10:30am&ndash;11:00am</th><td>Coffee</td></tr>
+      <tr><th scope="row">11:00am&ndash;12:30pm</th><td>Panel 4</td></tr>
+      <tr><th scope="row">12:30pm&ndash;1:30pm</th><td>Lunch</td></tr>
+      <tr><th scope="row">1:30pm&ndash;3:00pm</th><td>Double Workshop 3</td></tr>
+      <tr><th scope="row">3:00pm&ndash;3:30pm</th><td>Break</td></tr>
+      <tr><th scope="row">3:30pm&ndash;5:15pm</th><td>Meet the Projects 2</td></tr>
+      <tr><th scope="row">6:00pm</th><td>Dinner</td></tr>
+    </table>
+  </div>
+</div>
+```

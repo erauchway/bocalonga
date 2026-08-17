@@ -6,6 +6,7 @@ format:
     css: css/gridmenu.css
 ---
 
+```{=html}
 <!-- Main menu grid -->
 <div class="grid-menu">
 <a href="directions.html">
@@ -20,9 +21,12 @@ format:
 <img src="images/routemaster.png" alt="A Routemaster bus in Davis">
 <span class="label">Local<br>Information</span>
 </a>
-<div class="empty"></div>
+<a href="schedule.html">
+<img src="images/vines-tower.png" alt="The UC Davis experimental Vineyarder">
+<span class="label">Conference<br>Schedule</span>
+</a>
 </div>
-
+```
 <!-- Credit / attribution text -->
 <div class="grid-credit">
 With thanks to the Department of History at Stanford University,
@@ -32,4 +36,4 @@ of Letters and Science, and the Office of the Provost at the
 University of California, Davis.
 </div>
 
-<div class="page-nav"><p><a href="index.html">← Home</a></p></div>
+

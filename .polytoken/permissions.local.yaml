@@ -57,6 +57,11 @@ allow:
 - tool: web_fetch
   args:
     url: https://docs.polytoken.dev/harness-engineering/facets{,/**}
+- tool: shell_exec
+  args:
+    command_tokens:
+    - env
+    - '*'
 filesystem:
   allow:
   - access:

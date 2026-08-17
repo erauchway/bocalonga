@@ -1,0 +1,88 @@
+/*-- schedule stylesheet (for schedule.qmd only) --*/
+
+/* Outer wrapper: two days side by side, stacking to one column on narrow screens */
+.conf-calendar {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 2.5em;
+    width: min(100%, 760px);
+    margin: 2em auto;
+}
+
+/* A single day column */
+.conf-day {
+    break-inside: avoid;
+}
+
+/* Day heading (Friday / Saturday) */
+.conf-day h3 {
+    margin: 0 0 0.75em 0;
+    padding-bottom: 0.35em;
+    font-size: 1em;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-bottom: 2px solid currentColor;
+}
+
+/*
+ * Each day is a table: time in the left column (<th scope="row">),
+ * the event in the right column (<td>). Fixed table layout keeps the
+ * two time gutters aligned within a day and prevents the event column
+ * from stretching the time column.
+ *
+ * .conf-slots still carries the Bootstrap `table` class and its rows carry
+ * odd/even classes, so we force a transparent cell background and a
+ * grey separator to override any Bootstrap table theming and
+ * adapt cleanly to the @media (prefers-color-scheme: dark) colors from
+ * custom.scss.
+ */
+.conf-slots {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+.conf-slots th,
+.conf-slots td {
+    background-color: transparent;
+    border-color: rgba(128, 128, 128, 0.35);
+}
+
+/* Time column heading / cell */
+.conf-slots th {
+    text-align: left;
+    font-weight: normal;
+    font-size: 0.8em;
+    font-variant-numeric: tabular-nums;
+    opacity: 0.85;
+    white-space: nowrap;
+    vertical-align: top;
+    width: 8.5em;
+    padding: 0.55em 0.75em 0.55em 0;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.35);
+}
+
+/* Event cell */
+.conf-slots td {
+    vertical-align: top;
+    padding: 0.55em 0;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.35);
+}
+
+/* Last row flush */
+.conf-slots tr:last-child th,
+.conf-slots tr:last-child td {
+    border-bottom: none;
+}
+
+/* --- Responsive: stack the two days and relax the time gutter on phones --- */
+@media (max-width: 600px) {
+    .conf-calendar {
+        grid-template-columns: 1fr;
+        gap: 1.5em;
+        width: 100%;
+      }
+     .conf-slots th {
+        width: 6.5em;
+      }
+}
