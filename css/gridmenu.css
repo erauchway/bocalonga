@@ -24,101 +24,35 @@
     margin: 0 !important;
 }
 
-/* Grid images: dimmed by default, brighten on hover */
+/* Grid images — always full brightness, no hover effects */
 .grid-menu img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    filter: brightness(45%);
-    transition: filter 0.3s ease;
-    /* Pandoc/Quarto may set default padding/margin/vertical-align on <img>; reset */
+    filter: brightness(100%);
     padding: 0 !important;
     margin: 0 !important;
     border: none !important;
     vertical-align: unset !important;
 }
 
-/* Brighten image when the cell is hovered, focused, or pressed */
-.grid-menu a:hover img,
-.grid-menu a:focus img,
-.grid-menu a:focus-within img,
-.grid-menu a:active img {
-    filter: brightness(100%);
-}
-
-/* Hover label text — invisible by default, visible on parent hover/focus */
+/* Labels — always visible, pinned to bottom with caption bar.
+ * This is the mobile-style appearance applied universally. */
 .grid-menu .label {
     position: absolute;
     color: #ffffff;
-    font-size: 2em;
-    font-weight: bold;
-    text-shadow: 0 0 8px rgba(0, 0, 0, 0.8);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    pointer-events: none;
-}
-
-/* Show label on cell hover, keyboard focus, or press.
-* :focus / :focus-within make each square reveal its label when a keyboard or
-* screen-reader user Tabs to it; :active covers the instant of a tap. */
-.grid-menu a:hover .label,
-.grid-menu a:focus .label,
-.grid-menu a:focus-within .label,
-.grid-menu a:active .label {
+    font-size: clamp(15px, 4.5vw, 20px);
+    line-height: 1.1;
+    text-align: center;
     opacity: 1;
-}
-
-/* Discoverability without hover.
-*
-* Relying on @media (hover: none) alone is a trap: an iPad, a phone running a
-* desktop-mode browser, and Chrome's DevTools responsive mode all report
-* (hover: hover), so that rule silently fails on exactly the devices where it
-* matters — the visitor sees a dim 2x2 grid and cannot tell what it links to.
-* Gate on viewport width instead: every phone matches @media (max-width: 600px).
-*
-* The "dim until mouseover, then color + label" design is a *desktop* behavior.
-* On a small screen there is no mouseover, so we give the touch user the same
-* information without a hover: images stay in full color and each cell shows its
-* one-word destination as a caption strip.
-*/
-@media (max-width: 600px) {
-    /* Un-dim: with no hover, a 45%-brightness image is just stuck dim. */
-    .grid-menu img {
-        filter: brightness(100%);
-    }
-
-    /* Always-visible, legible caption strip pinned to the bottom of each cell.
-    * Translucent dark backdrop so the white label reads over any image; wrapping
-    * text and a smaller font so long words (e.g. "Accommodations") and the
-    * existing <br> breaks lay out cleanly inside a narrow column. */
-    .grid-menu .label {
-        opacity: 1;
-        left: 0;
-        right: 0;
-        top: auto;
-        bottom: 0;
-        padding: 0.4em 0.35em;
-        font-size: clamp(15px, 4.5vw, 20px);
-          /* Safety net: "Accommodations" is a single word longer than the narrowest
-           * mobile cell and would otherwise be CUT OFF by the cell's overflow:hidden.
-           * These two only fire for that pathologically long word, letting it break
-           * to a second line instead of clipping. */
-         overflow-wrap: anywhere;
-         word-break: break-word;
-        line-height: 1.1;
-        text-align: center;
-        background-color: rgba(0, 0, 0, 0.55);
-        transition: none;
-    }
-}
-
-/* Wide touchscreens (large tablet/phone in landscape) can report a hover
-* capability even though they have no fine pointer; keep labels visible there
-* too. A fallback — the viewport rule above is the reliable one. */
-@media (hover: none) {
-    .grid-menu .label {
-        opacity: 1;
-    }
+    left: 0;
+    right: 0;
+    top: auto;
+    bottom: 0;
+    padding: 0.4em 0.35em;
+    background-color: rgba(0, 0, 0, 0.55);
+    overflow-wrap: anywhere;
+    word-break: break-word;
 }
 
 /* Empty placeholder cells */

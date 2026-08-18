@@ -162,6 +162,12 @@ allow:
     - cp
     - images/davis_station.png
     - '*'
+- tool: shell_exec
+  args:
+    command_tokens:
+    - cp
+    - css/gridmenu.css
+    - '*'
 filesystem:
   allow:
   - access:

@@ -73,5 +73,8 @@
 - Verification: quarto render exits 0; new tooling/verify.mjs passes all six phone combinations (no horizontal page scroll, no horizontal/vertical label clip against the true parent box, all labels shown, every cell >=44px, images 100% on mobile, both day and night); original tooling harness still green (36/36, 0 failed); desktop hover/dim behaviour confirmed intact.
 - Remaining open item, flagged for the user because it collides with the "Generate no images" rule: the homepage transfers ~91 MB of the four grid images (source PNGs are 12-32MB each; docs/images totals 183MB). On a phone this dominates first paint. Options require a decision (responsive <picture>/srcset web images, or leaving images untouched).
  
+## 2026-08-18 Progress (grid menu — unified mobile-style for all devices)
+- Rewrote `css/gridmenu.css` to eliminate the two-appearance system entirely: all viewers now get the mobile-style layout with always-visible caption bars at the bottom of each grid cell; removed all hover-based dimming/brightening transitions and opacity toggles. Images stay at full brightness 100% on every device.
+- Updated both `css/gridmenu.css` (source) and `docs/css/gridmenu.css` (output). Verified clean render: `quarto render` exits 0, zero errors.
 ## 2026-08-18 Progress
 - Rotated `images/davis_station.png` 180° using ImageMagick so it appears right-side up on the site
