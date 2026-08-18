@@ -1,4 +1,4 @@
-/*-- grid-menu stylesheet (for confindex.qmd only) --*/
+/*-- grid-menu stylesheet (for index.qmd) --*/
 
 /* Outer wrapper for the menu grid */
 .grid-menu {
@@ -19,7 +19,7 @@
     overflow: hidden;
     text-decoration: none;
     position: relative;
-     /* Prevent Pandoc/Bootstrap margin/padding leaks into cell */
+    /* Prevent Pandoc/Bootstrap margin/padding leaks into cell */
     padding: 0 !important;
     margin: 0 !important;
 }
@@ -46,7 +46,7 @@
     filter: brightness(100%);
 }
 
-/* Hover label text — invisible by default, visible on parent hover */
+/* Hover label text — invisible by default, visible on parent hover/focus */
 .grid-menu .label {
     position: absolute;
     color: #ffffff;
@@ -68,14 +68,51 @@
     opacity: 1;
 }
 
-/* Touch devices (phones / tablets) report (hover: none) and have no hover
-* state, so a dimmed 2x2 grid with hover-only labels is unusable there: a
-* visitor sees four dim images and cannot tell what any square links to.
-* On such devices keep the labels visible at all times. */
-@media (hover: none) {
-      .grid-menu .label {
+/* Discoverability without hover.
+*
+* Relying on @media (hover: none) alone is a trap: an iPad, a phone running a
+* desktop-mode browser, and Chrome's DevTools responsive mode all report
+* (hover: hover), so that rule silently fails on exactly the devices where it
+* matters — the visitor sees a dim 2x2 grid and cannot tell what it links to.
+* Gate on viewport width instead: every phone matches @media (max-width: 600px).
+*
+* The "dim until mouseover, then color + label" design is a *desktop* behavior.
+* On a small screen there is no mouseover, so we give the touch user the same
+* information without a hover: images stay in full color and each cell shows its
+* one-word destination as a caption strip.
+*/
+@media (max-width: 600px) {
+    /* Un-dim: with no hover, a 45%-brightness image is just stuck dim. */
+    .grid-menu img {
+        filter: brightness(100%);
+    }
+
+    /* Always-visible, legible caption strip pinned to the bottom of each cell.
+    * Translucent dark backdrop so the white label reads over any image; wrapping
+    * text and a smaller font so long words (e.g. "Accommodations") and the
+    * existing <br> breaks lay out cleanly inside a narrow column. */
+    .grid-menu .label {
         opacity: 1;
-      }
+        left: 0;
+        right: 0;
+        top: auto;
+        bottom: 0;
+        padding: 0.4em 0.35em;
+        font-size: 1.4em;
+        line-height: 1.1;
+        text-align: center;
+        background-color: rgba(0, 0, 0, 0.55);
+        transition: none;
+    }
+}
+
+/* Wide touchscreens (large tablet/phone in landscape) can report a hover
+* capability even though they have no fine pointer; keep labels visible there
+* too. A fallback — the viewport rule above is the reliable one. */
+@media (hover: none) {
+    .grid-menu .label {
+        opacity: 1;
+    }
 }
 
 /* Empty placeholder cells */

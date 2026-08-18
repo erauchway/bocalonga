@@ -67,6 +67,30 @@ allow:
     command_tokens:
     - od
     - '*'
+- tool: web_fetch
+  args:
+    url: https://playwright.dev/docs/actionability{,/**}
+- tool: web_fetch
+  args:
+    url: https://developer.chrome.com/docs/lighthouse/overview{,/**}
+- tool: web_fetch
+  args:
+    url: https://playwright.dev/docs/emulation{,/**}
+- tool: shell_exec
+  args:
+    command_tokens:
+    - node
+    - '*'
+- tool: shell_exec
+  args:
+    command_tokens:
+    - python3
+    - '*'
+- tool: shell_exec
+  args:
+    command_tokens:
+    - curl
+    - '*'
 filesystem:
   allow:
   - access:

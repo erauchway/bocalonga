@@ -5,3 +5,6 @@ docs/text
 docs/.DS_Store
 AGENTS.md
 *~
+tooling/node_modules/
+tooling/results/
+tooling/package-lock.json
