@@ -98,7 +98,13 @@
         top: auto;
         bottom: 0;
         padding: 0.4em 0.35em;
-        font-size: 1.4em;
+        font-size: clamp(15px, 4.5vw, 20px);
+          /* Safety net: "Accommodations" is a single word longer than the narrowest
+           * mobile cell and would otherwise be CUT OFF by the cell's overflow:hidden.
+           * These two only fire for that pathologically long word, letting it break
+           * to a second line instead of clipping. */
+         overflow-wrap: anywhere;
+         word-break: break-word;
         line-height: 1.1;
         text-align: center;
         background-color: rgba(0, 0, 0, 0.55);

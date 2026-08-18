@@ -91,6 +91,36 @@ allow:
     command_tokens:
     - curl
     - '*'
+- tool: shell_exec
+  args:
+    command_tokens:
+    - rm
+    - '*'
+- tool: web_fetch
+  args:
+    url: https://docs.polytoken.dev/reference/cli{,/**}
+- tool: shell_exec
+  args:
+    command_tokens:
+    - /tmp
+    - '*'
+- tool: shell_exec
+  args:
+    command_tokens:
+    - strings
+    - '*'
+- tool: web_fetch
+  args:
+    url: https://docs.polytoken.dev/schemas/app-config.schema.yaml{,/**}
+- tool: shell_exec
+  args:
+    command_tokens:
+    - polytoken
+    - config
+    - '*'
+- tool: web_fetch
+  args:
+    url: https://docs.polytoken.dev/using-polytoken/web-search{,/**}
 filesystem:
   allow:
   - access:
