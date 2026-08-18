@@ -121,6 +121,47 @@ allow:
 - tool: web_fetch
   args:
     url: https://docs.polytoken.dev/using-polytoken/web-search{,/**}
+- tool: shell_exec
+  args:
+    command_tokens:
+    - identify
+    - '*'
+- tool: shell_exec
+  args:
+    command_tokens:
+    - magick
+    - identify
+    - '*'
+- tool: shell_exec
+  args:
+    command_tokens:
+    - magick
+    - images/davis_station.png
+    - '*'
+- tool: shell_exec
+  args:
+    command_tokens:
+    - date
+    - '+%Y-%m-%d'
+    - '*'
+- tool: shell_exec
+  args:
+    command_tokens:
+    - convert
+    - images/davis_station.png
+    - '*'
+- tool: shell_exec
+  args:
+    command_tokens:
+    - mv
+    - images/davis_station_fixed.png
+    - '*'
+- tool: shell_exec
+  args:
+    command_tokens:
+    - cp
+    - images/davis_station.png
+    - '*'
 filesystem:
   allow:
   - access:

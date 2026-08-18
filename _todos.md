@@ -6,6 +6,8 @@
 
 [x] 2026-08-18 — Grid menu made *functional* on mobile in `css/gridmenu.css`. The 2×2 layout itself was already sound (cells 135–181px tap targets, all labels visible on phones); the real defect was the fixed `1.4em` mobile caption clipping the one-word label "Accommodations" by up to 65px on a 320px phone (parent `a` has `overflow:hidden`). Fixes: `font-size: clamp(15px, 4.5vw, 20px)` + `overflow-wrap:anywhere`/`word-break:break-word` safety net in the `@media (max-width:600px)` block; added `decoding="async"` to the four grid `<img>` in `index.qmd` (no image generated/changed). Verified: `quarto render` exits 0; new `tooling/verify.mjs` passes all 6 phone combos (no sideways scroll, no H/V label clip, all labels shown, cells ≥44px, images 100%, day+night); original harness still 36/36.
 
+[x] 2026-08-18 — Rotate `images/davis_station.png` 180° so it appears right-side up; verified site renders cleanly (`quarto render` exits 0).
+
 ## To Do
 
 - [user decision — collides with "Generate no images" rule] Reduce image payload: **every** image on the site is 12–31 MB uncompressed (the four grid tiles alone are ~91 MB on the homepage; subpages carry 14–27 MB each). On a mobile connection this dominates first paint. **No page currently compresses its images.** Options: (a) generate optimized/responsive web versions (`<picture>`/`srcset`, or downsized PNGs/AVIF/WEBP) — requires an exception to the "no generated images" rule; (b) leave images untouched and rely on `decoding="async"` only; (c) request the user supply already-web-optimized image files to replace the raw high-res source PNGs. Needs user sign-off before touching images.
