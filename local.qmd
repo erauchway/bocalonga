@@ -11,7 +11,7 @@ Kayak recommends Davis on its 2026 list of college towns worth a weekend visit, 
 
 In April temperatures may range from the 50s into the 70s or 80s (Fahrenheit) over the course of a day. Humidity is likely to be low. It's been known to rain, though chances are slim. You'll be well served by bringing a light jacket you won't mind removing and carrying during the day.
 
-### Forecast and current conditions
+### Current conditions and forecast
 
 ````{=html}
 <div style="position:relative; width:100%; max-width:650px; margin:0 auto; aspect-ratio:650/450;">
