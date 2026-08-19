@@ -1,1 +1,0 @@
-[x] Currently `index.qmd` provides a grid of pictorial options with two different appearances, one for desktop and one for mobile. Please alter the desktop version so that it looks like the current mobile version, with captions over bars at the bottom that are visible. Abandon all mouseover behaviors.
